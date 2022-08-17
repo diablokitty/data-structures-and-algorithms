@@ -56,7 +56,7 @@ Write a function named forEachTwoToThe that produces the same output as your for
 
 const forEachTwoToThe = (arr) => {
   let newArr = [];
-  arr.forEach((item) => newArr.push(Math.pow(2, arr[item])));
+  arr.forEach((i) => newArr.push(Math.pow(2, i)));
   return newArr;
 };
 
@@ -66,9 +66,8 @@ CHALLENGE 6
 Write a function named mapTwoToThe that produces the same output as your forLoopTwoToThe function from challenge 4 and your forEachTwoToThe function from challenge 5, but uses map instead of a for loop or forEach.
 ------------------------------------------------------------------------------------------------ */
 
-const mapTwoToThe = (arr) => {
-  // Solution code here...
-};
+const mapTwoToThe = (arr) => arr.map(item => (Math.pow(2, item)));
+
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 7 - Stretch Goal
@@ -80,9 +79,8 @@ Read the MDN documentation on String.charCodeAt() if necessary.
 For example: charCode(['h','i']) returns [104, 105].
 ------------------------------------------------------------------------------------------------ */
 
-const charCode = (arr) => {
-  // Solution code here...
-};
+const charCode = (arr) => arr.map(item => arr.CharCodeAt(item));
+
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 8 - Stretch Goal
