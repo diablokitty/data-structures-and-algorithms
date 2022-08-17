@@ -83,3 +83,6 @@ From the `data-structures-and-algorithms/javascript` folder, execute the followi
 #### Live Tests
 
 Note that when you check your code into GitHub, all of your tests will automatically execute. These results should match your own, and will be found on the  **Actions** tab
+
+Acknowledgement - Challenge 1 worked with Humberto Pineda, my thanks for his inspiration and assistance on numbers 2, 3 and 4. Thanks to Sheyna for her explanation of #6
+Challenge 2 worked with Jordan Yamada, thanks for his patient explanations when I got stuck.
