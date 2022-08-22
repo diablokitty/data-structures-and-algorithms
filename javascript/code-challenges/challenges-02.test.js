@@ -146,7 +146,7 @@ const snorlaxAbilities = {
   weight: 4600,
 };
 
-// const extractAbilities = (arr) => newArr.push(arr.map => return Snorlax.ability){
+//const extractAbilities = (arr) => newArr.push(arr.map => return Snorlax.ability);
 //   // Solution code here...
 // };
 
