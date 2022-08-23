@@ -85,7 +85,7 @@ console.log(people[1].isAuthor) prints true
 ------------------------------------------------------------------------------------------------ */
 
 const setStatusAsAuthor = (people) => {
-
+  console.log(people);
   //use a forEach loop to add the key/value pair to each Object.
 
 };
@@ -107,6 +107,9 @@ console.log(a) prints [1, 2, 3, 4]
 ------------------------------------------------------------------------------------------------ */
 
 const append = (arr1, arr2) => {
+
+  console.log(arr1);
+  console.log(arr2);
 
   // use spread? review that terrible fruit article
 

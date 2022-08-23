@@ -1,6 +1,6 @@
-Much appreciation to Sheyna, Shane, Jeffrey, the Davids, Alfredo and Jordan for sharing their knowledge on these methods and assisting me with the code challenges.
-
 # Code Challenges
+
+## Much appreciation to Sheyna, Shane, Jeffrey, the Davids, Alfredo and Jordan for sharing their knowledge on these methods and assisting me with the code challenges
 
 Part of growing as a programmer is to practice, practice, practice. Throughout this course, you will complete a set of daily code challenges. Each set will contain up to ten problems.
 
