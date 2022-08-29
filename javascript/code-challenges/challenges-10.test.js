@@ -44,8 +44,15 @@ For example:
 return: 35
 ------------------------------------------------------------------------------------------------ */
 const totalSum = (matrix) => {
+  let total = 0;
+  matrix.forEach(arr {
+    arr.forEach(num {
+      totalSum += num;
+    });
+  });
+    return total;
   // Solution code here...
-};
+}
 
 
 /* ------------------------------------------------------------------------------------------------
@@ -133,7 +140,7 @@ The top row of the board is considered row zero and row numbers increase as they
 ------------------------------------------------------------------------------------------------ */
 
 const battleship = (board, row, col) => {
-  //  Solution code here...
+  return board[row][col] === '#' ? 'hit' : 'miss';
 };
 
 /* ------------------------------------------------------------------------------------------------
