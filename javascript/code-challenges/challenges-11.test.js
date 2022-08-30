@@ -18,9 +18,13 @@ Becomes:
 ]
 ------------------------------------------------------------------------------------------------ */
 
-function transformToLis(obj){
-  // Solution code here...
-};
+function transformToLis(obj) {
+  let arr = [];
+  for (const [key, value] of Object.entries(obj)) {
+    arr.push(`<li>${key}: ${value}</li>`);
+  }
+  return arr;
+}
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 2
@@ -33,8 +37,16 @@ For example, count(5, [[1, 3, 5, 7, 9], [5, 5, 5], [1, 2, 3]]) returns 4.
 ------------------------------------------------------------------------------------------------ */
 
 const count = (target, input) => {
-  // Solution code here...
+  let total = 0;
+  input.map(numbers =>
+    numbers.map(target => target ? total++ : 0)
+  );
+  return total;
 };
+//idea is right, syntax is wrong
+
+
+
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 3
@@ -47,8 +59,16 @@ For example, [[1, 2, 3, 4, 5], [6, 7, 2, 4, 5, 7], [9, 2, 3, 6,]] returns 66.
 ------------------------------------------------------------------------------------------------ */
 
 const totalSum = (input) => {
-  // Solution code here...
+  for (let i = 0; i < input.length; i++) {
+    let total = 0;
+    for (let j = 0; j < input.length; j++) {
+      total += input[j].arr[i];
+    }
+    return total;
+  }
 };
+
+
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 4
@@ -155,8 +175,8 @@ Run your tests from the console: jest challenges-10.test.js
 
 describe('Testing challenge 1', () => {
   test('It should return a list of key value pairs inside of li tags', () => {
-    expect(transformToLis({name: 'bob', age: 32})[0]).toStrictEqual(`<li>name: bob</li>`);
-    expect(transformToLis({name: 'bob', age: 32})[1]).toStrictEqual(`<li>age: 32</li>`);
+    expect(transformToLis({ name: 'bob', age: 32 })[0]).toStrictEqual(`<li>name: bob</li>`);
+    expect(transformToLis({ name: 'bob', age: 32 })[1]).toStrictEqual(`<li>age: 32</li>`);
     expect(transformToLis({})).toStrictEqual([]);
   });
 });
