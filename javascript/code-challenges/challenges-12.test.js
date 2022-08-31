@@ -7,6 +7,9 @@ Write a function named replaceZeros that, given a string, uses Regex to replace 
 ------------------------------------------------------------------------------------------------ */
 
 const replaceZeros = (string) => {
+  string.replace(/0/, 'zero');
+  console.log(string);
+  return string;
   // Solution code here...
 };
 
@@ -18,9 +21,7 @@ Write a function named validatePin that uses a regular expression pattern to val
 If the PIN is four numerical digits long, return true. Otherwise, return false.
 ------------------------------------------------------------------------------------------------ */
 
-const validatePin = (pin) => {
-  // Solution code here...
-};
+const validatePin = (pin) => pin.test(/\d\d\d\d/g);
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 3
