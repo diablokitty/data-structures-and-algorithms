@@ -149,9 +149,10 @@ let starWarsData = [{
 }];
 
 let findMaleAndFemale = (data) => {
-  // Solution code here...
-};
 
+  return data.filter(char => char.gender === || char.gender === female).map(char => char.name).join(' and ');
+};
+//Tried to do this with ternary, didn't work
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 6
 
@@ -159,7 +160,7 @@ Write a function named findShortest that, given the Star Wars data from Challeng
 ------------------------------------------------------------------------------------------------ */
 
 let findShortest = (data) => {
-  // Solution code here...
+return data.reduce((currShortest, newHeight) => Number(currShortest.height) < Number(newHeight.height) ? currentShortest : newHeight).name;
 };
 
 /* ------------------------------------------------------------------------------------------------
