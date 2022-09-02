@@ -74,7 +74,7 @@ For example, if the input is 'Welcome', the output will be:
 
 const howMuchPencil = (str) => {
   let result = [];
-  for(let i = 0; i < str.length +1 ; i++) {
+  for (let i = 0; i < str.length + 1; i++) {
     let newStr = str.slice(i);
     result.push(newStr);
   }
@@ -136,9 +136,26 @@ const gruffaloCrumble = {
 
 const listFoods = (recipe) => {
   let result = [];
-  // Solution code here...
+  recipe.ingredients.forEach((rec) => {
+    result.push(rec.slice(rec.indexOf(' ', 3) + 1));
+  });
   return result;
 };
+
+//Worked on this with Charlie Fadness
+//   let result = [];
+//   recipe.ingredients.forEach((ingredient, idx) => {
+// //2 gallons fresh water
+//     idx = ingredient.indexOf(' ');
+//     let item = '';
+//     // for(let i = 0; i < ingredient.length; i++){
+
+//     // }
+//     idx > 0 ? item = ingredient.slice(idx) : result.push(item);
+//   });
+//   // Solution code here...
+//   return result;
+// };
 //no clue, too tired.
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 7 - Stretch Goal
