@@ -11,8 +11,9 @@ Write a function named screenForNames that takes in an array of strings and uses
 ------------------------------------------------------------------------------------------------ */
 
 const screenForNames = (arr) => {
-  // Solution code here...
-}
+  let reg = /^((Mr)||(Mrs)|(Ms)|(Dr))\.\s[a-zA-Z]+/;
+  return arr.filter(string => reg.test(string));
+};
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 2
@@ -23,6 +24,12 @@ For example, ['apple', 'banana', 'MacGyver'] returns ['Apple', 'Banana', 'MacGyv
 ------------------------------------------------------------------------------------------------ */
 
 const toTitleCase = (arr) => {
+  return arr.map(str => {
+    let fstLtr = str.charAt(0).toUpperCase();
+    return fstLtr + str.substr(1);
+
+  });
+
   // Solution code here...
 };
 
@@ -98,8 +105,17 @@ let starWarsData = [{
 }];
 
 let biggerThanLuke = (arr) => {
-  // Solution code here...
+  let luke = arr.find(char => char.name = 'Luke SkyWalker');
+  return arr.filter(char => parseInt(char.mass) > parseInt(luke.mass)).reduce((str, currentChar, i, arr) =>
+  {
+    i === arr.length - 1
+      ? str += currentChar.name
+      : str += currentChar.name + ' - ';
+    return str;
+  }, '');
 };
+
+
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 4
@@ -116,11 +132,24 @@ This data could be sorted by name or price.
 ------------------------------------------------------------------------------------------------ */
 
 const sortBy = (property, arr) => {
-  // Solution code here...
+  return arr.sort((a, b) =>
+  {
+    const valueA = a[property];
+    const valueB = b[property];
+    if (valueA < valueB)
+    {
+      return -1;
+    } else if (valueB < valueA)
+    {
+      return 1;
+    } else
+    {
+      return 0;
+    }
+  });
 };
-
 /* ------------------------------------------------------------------------------------------------
-CHALLENGE 5 
+CHALLENGE 5
 
 Write a function that determines if a given URL is secure, beginning with https://
 
@@ -132,17 +161,19 @@ https://secure.com returns true because the URL is secure
 https:/missingslash.org returns false because the URL is malformed
 ------------------------------------------------------------------------------------------------ */
 const isSecure = (url) => {
-  // Solution code here...
+
+  let reg = /^(https:\/\/)/;
+  return reg.test(url);
 };
 
 /* ------------------------------------------------------------------------------------------------
-CHALLENGE 6 
+CHALLENGE 6
 
 Write a function named detectTicTacToeWin that accepts a two-dimensional array of strings. Each string is guaranteed to be either "X", "O" or an empty string. Your function should check to see if any row, column, or either diagonal direction has three matching "X" or "O" symbols (non-empty strings), three-in-a-line.
 
 This function should return either true or false to indicate if someone won the game.
 
-Instead of trying to write crazy for loops to automate checking the rows, columns and diagonals consider writing one helper function that accepts three coordinate pairs and checks the values of the array at those locations. For instance helpCheck(row1, col1, row2, col2, row3, col3).
+Instead of trying to write crazy for loops to automate checking the rows, columns and diagonals consider writing one helper function that accepts three coordinate pairs and checks the values of the array at those locations. For instance check(row1, col1, row2, col2, row3, col3).
 
 Your function does not need to work for boards of any size other than 3x3.
 
@@ -155,7 +186,22 @@ Here is a sample board:
 ------------------------------------------------------------------------------------------------ */
 
 const detectTicTacToeWin = (board) => {
-  // Solution code here...
+  let check = (set) =>
+  {
+    return set.every(cell => cell !== '' && cell === set[0]) ? true : false;
+  };
+  if (check(board[0])) return true;
+  if (check(board[1])) return true;
+  if (check(board[2])) return true;
+
+  if (check([board[0][0], board[1][0], board[2][0]])) return true;
+  if (check([board[0][1], board[1][1], board[2][1]])) return true;
+  if (check([board[0][2], board[1][2], board[2][2]])) return true;
+
+  if (check([board[0][0], board[1][1], board[2][2]])) return true;
+  if (check([board[0][2], board[1][1], board[2][0]])) return true;
+
+  return false;
 };
 
 /* ------------------------------------------------------------------------------------------------
