@@ -1,5 +1,7 @@
 'use strict';
 
+//thanks to sheyna, david suy, rhea carillo and jordan yamada for assistance and inspiration
+
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 1 - Review
 
@@ -38,14 +40,9 @@ For example, count(5, [[1, 3, 5, 7, 9], [5, 5, 5], [1, 2, 3]]) returns 4.
 
 const count = (target, input) => {
   let total = 0;
-  input.map(numbers =>
-    numbers.map(target => target ? total++ : 0)
-  );
+  input.map((number) => number.map((num) => num === target && total++));
   return total;
 };
-//idea is right, syntax is wrong
-
-
 
 
 /* ------------------------------------------------------------------------------------------------
@@ -59,16 +56,12 @@ For example, [[1, 2, 3, 4, 5], [6, 7, 2, 4, 5, 7], [9, 2, 3, 6,]] returns 66.
 ------------------------------------------------------------------------------------------------ */
 
 const totalSum = (input) => {
-  for (let i = 0; i < input.length; i++) {
-    let total = 0;
-    for (let j = 0; j < input.length; j++) {
-      total += input[j].arr[i];
-    }
-    return total;
-  }
+
+  let total = 0;
+  input.filter(arr => arr.filter(num => total += num));
+  return total;
+
 };
-
-
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 4
@@ -83,9 +76,10 @@ For example, [ [0,2,5,4], [2,4,10], [] ] should return [ [1, 32], [1024], [] ].
 ------------------------------------------------------------------------------------------------ */
 
 const divisibleByFiveTwoToThePower = (input) => {
-  // Solution code here...
+  return input.map(array => array.filter(element => typeof (element) === 'number' && (element % 5) === 0).map(num => Math.pow(2, num)));
 };
 
+//this is Rhea's solution.
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 5
 
@@ -150,9 +144,10 @@ let starWarsData = [{
 
 let findMaleAndFemale = (data) => {
 
-  return data.filter(char => char.gender === || char.gender === female).map(char => char.name).join(' and ');
+  return data.filter(character => character.gender === 'male' || character.gender === 'female').map(character => character.name).join(' and ');
+  //return data.filter(char => char.gender ===  char.gender === female).map(char => char.name).join(' and ');
 };
-//Tried to do this with ternary, didn't work
+//Tried to do this with ternary, didn't work.
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 6
 
@@ -160,7 +155,7 @@ Write a function named findShortest that, given the Star Wars data from Challeng
 ------------------------------------------------------------------------------------------------ */
 
 let findShortest = (data) => {
-return data.reduce((currShortest, newHeight) => Number(currShortest.height) < Number(newHeight.height) ? currentShortest : newHeight).name;
+  return data.reduce((currShortest, newHeight) => Number(currShortest.height) < Number(newHeight.height) ? currShortest : newHeight).name;
 };
 
 /* ------------------------------------------------------------------------------------------------
